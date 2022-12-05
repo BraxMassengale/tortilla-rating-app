@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tortillas</title>
-</head>
-<body class="antialiased">
-<div class="isolate">
-    <div class="bg-white pb-8 sm:pb-12 lg:pb-12">
+<!--
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div class="bg-white pb-8 sm:pb-12 lg:pb-12">
     <div class="overflow-hidden pt-8 sm:pt-12 lg:relative lg:py-48">
         <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8">
             <div>
                 <div>
-                    <img class="h-11 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=amber&shade=600" alt="Your Company">
+                    <img class="h-11 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
                 </div>
                 <div class="mt-20">
                     <div>
                         <a href="#" class="inline-flex space-x-4">
-                            <span class="rounded bg-amber-50 px-2.5 py-1 text-sm font-semibold text-amber-600">What's new</span>
-                            <span class="inline-flex items-center space-x-1 text-sm font-medium text-amber-600">
+                            <span class="rounded bg-indigo-50 px-2.5 py-1 text-sm font-semibold text-indigo-600">What's new</span>
+                            <span class="inline-flex items-center space-x-1 text-sm font-medium text-indigo-600">
                 <span>Just shipped version 0.1.0</span>
                                 <!-- Heroicon name: mini/chevron-right -->
                 <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -39,21 +43,21 @@
                     @if (Route::has('login'))
                         <div class="mt-12 sm:flex sm:w-full sm:max-w-lg">
                             @auth
-                                <div class="mt-4 sm:mt-0">
+                                <div class="mt-4 sm:mt-0 sm:ml-3">
                                     <a href="{{ url('/dashboard') }}"
                                        class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">Dashboard</a>
                                 </div>
                             @else
-                                <div class="mt-4 sm:mt-0">
+                                <div class="mt-4 sm:mt-0 sm:ml-3">
                                     <a href="{{ route('login') }}"
-                                       class="block w-full rounded-md border border-amber-600 bg-white px-5 py-3 text-base font-medium text-amber-600 hover:text-white hover:border-transparent shadow hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 sm:px-10">
+                                       class="block w-full rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10">
                                         Log In
                                     </a>
                                 </div>
                                 @if (Route::has('register'))
                                     <div class="mt-4 sm:mt-0 sm:ml-3">
                                         <a href="{{ route('register') }}"
-                                           class="block w-full rounded-md border border-transparent bg-amber-600 px-5 py-3 text-base font-medium text-white shadow hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 sm:px-10">
+                                           class="block w-full rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10">
                                             Sign Up
                                         </a>
                                     </div>
@@ -61,6 +65,12 @@
                             @endauth
                         </div>
                     @endif
+                    <div class="mt-12 sm:flex sm:w-full sm:max-w-lg">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-3">
+                            <a href="" class="block w-full rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10">Login</a>
+                        </div>
+                    </div>
                     <div class="mt-6">
                         <div class="inline-flex items-center divide-x divide-gray-300">
                             <div class="flex flex-shrink-0 pr-5">
@@ -85,7 +95,7 @@
                                     <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                                 </svg>
                             </div>
-                            <div class="min-w-0 flex-1 py-1 pl-5 text-sm text-gray-500 sm:py-3"><span class="font-medium text-gray-900">Discover the best</span> <span class="font-medium text-amber-600">tortillas in your area</span></div>
+                            <div class="min-w-0 flex-1 py-1 pl-5 text-sm text-gray-500 sm:py-3"><span class="font-medium text-gray-900">Rated 5 stars</span> by over <span class="font-medium text-indigo-600">500 beta users</span></div>
                         </div>
                     </div>
                 </div>
@@ -105,12 +115,10 @@
                         <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
                     </svg>
                 </div>
-                <div class="relative -mr-40 pl-4 sm:mx-auto sm:max-w-2xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                    <img class="w-50 rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-80 lg:w-auto lg:max-w-none" src="../images/tortilla.jpg" alt="">
+                <div class="relative -mr-40 pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
+                    <img class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/top-nav-with-multi-column-layout-screenshot.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
