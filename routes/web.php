@@ -25,4 +25,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/create', function () {
+        return view('create');
+    })->name('create');
+    Route::get('/friends', function () {
+        return view('friends');
+    })->name('friends');
 });
